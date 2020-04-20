@@ -17,7 +17,7 @@ void TitleUpdate()
 
 	//ŽŸ‚Ì‰æ–Ê‚Ö‚Ì‘JˆÚ
 	if (CheckHitKey(KEY_INPUT_SPACE) != 0) {
-
+		ChangeScene(eScene_Game);
 	}
 }
 
@@ -40,7 +40,7 @@ void LoadImg_Title()
 
 void ReleaseImg_Title()
 {
-	DeleteGraph(machine);
+	//DeleteGraph(machine);
 	DeleteGraph(gametitle);
 	imgloadflag = 0;
 }

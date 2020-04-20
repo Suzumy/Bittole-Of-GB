@@ -14,11 +14,11 @@ void SceneMgrUpdate()
 		break;
 
 	case eScene_Game:
-		//GameUpdate();
+		GameUpdate();
 		break;
 
 	case eScene_Result:
-		//ResultUpdate();
+		ResultUpdate();
 		break;
 	}
 }
@@ -31,11 +31,11 @@ void SceneMgrDraw()
 		break;
 
 	case eScene_Game:
-		//GameDraw();
+		GameDraw();
 		break;
 
 	case eScene_Result:
-		//ResultDraw();
+		ResultDraw();
 		break;
 	}
 }
