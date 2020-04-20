@@ -6,6 +6,8 @@ extern int machine;
 
 int imgloadflag_game = 0;
 
+int count_game = 0;
+
 void GameUpdate()
 {
 
@@ -14,10 +16,15 @@ void GameUpdate()
 		LoadImg_Game();
 	}
 
-	if (CheckHitKey(KEY_INPUT_N) != 0) {
-		ChangeScene(eScene_Result);
-		ReleaseImg_Game();
+	count_game++;
+	if (count_game >= 60) {
+		if (CheckHitKey(KEY_INPUT_N) != 0) {
+			ChangeScene(eScene_Result);
+			ReleaseImg_Game();
+		}
 	}
+
+	
 }
 
 void GameDraw()
@@ -39,4 +46,5 @@ void LoadImg_Game()
 void ReleaseImg_Game()
 {
 	imgloadflag_game = 0;
+	count_game = 0;
 }

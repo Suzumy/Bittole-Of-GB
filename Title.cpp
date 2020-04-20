@@ -8,6 +8,9 @@ int machine, gametitle;
 //ƒtƒ‰ƒO
 int imgloadflag = 0;
 
+//ƒL[“ü—ÍŽžŒë“®ì–hŽ~—pƒJƒEƒ“ƒg
+int count_title = 0;
+
 void TitleUpdate()
 {
 	if (imgloadflag == 0) {
@@ -15,10 +18,13 @@ void TitleUpdate()
 		LoadImg_Title();
 	}
 
-	//ŽŸ‚Ì‰æ–Ê‚Ö‚Ì‘JˆÚ
-	if (CheckHitKey(KEY_INPUT_SPACE) != 0) {
-		ChangeScene(eScene_Game);
-		ReleaseImg_Title();
+	count_title++;
+	if (count_title >= 60) {
+		//ŽŸ‚Ì‰æ–Ê‚Ö‚Ì‘JˆÚ
+		if (CheckHitKey(KEY_INPUT_SPACE) != 0) {
+			ChangeScene(eScene_Game);
+			ReleaseImg_Title();
+		}
 	}
 }
 
@@ -44,4 +50,5 @@ void ReleaseImg_Title()
 	//DeleteGraph(machine);
 	DeleteGraph(gametitle);
 	imgloadflag = 0;
+	count_title = 0;
 }

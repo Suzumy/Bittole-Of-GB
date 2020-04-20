@@ -10,6 +10,8 @@ int result, kill, bonus, sumpoint;
 //ƒtƒ‰ƒO
 int imgloadflag_result = 0;
 
+int count_result = 0;
+
 void ResultUpdate()
 {
 	if (imgloadflag_result == 0) {
@@ -17,10 +19,14 @@ void ResultUpdate()
 		LoadImg_Result();
 	}
 
-	if (CheckHitKey(KEY_INPUT_SPACE) != 0) {
-		ChangeScene(eScene_Title);
-		ReleaseImg_Result();
+	count_result++;
+	if (count_result >= 60) {
+		if (CheckHitKey(KEY_INPUT_SPACE) != 0) {
+			ChangeScene(eScene_Title);
+			ReleaseImg_Result();
+		}
 	}
+	
 }
 
 void ResultDraw()
@@ -51,4 +57,5 @@ void ReleaseImg_Result()
 	DeleteGraph(bonus);
 	DeleteGraph(sumpoint);
 	imgloadflag_result = 0;
+	count_result = 0;
 }
