@@ -18,6 +18,7 @@ void TitleUpdate()
 	//ŽŸ‚Ì‰æ–Ê‚Ö‚Ì‘JˆÚ
 	if (CheckHitKey(KEY_INPUT_SPACE) != 0) {
 		ChangeScene(eScene_Game);
+		ReleaseImg_Title();
 	}
 }
 

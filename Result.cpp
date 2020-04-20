@@ -19,6 +19,7 @@ void ResultUpdate()
 
 	if (CheckHitKey(KEY_INPUT_SPACE) != 0) {
 		ChangeScene(eScene_Title);
+		ReleaseImg_Result();
 	}
 }
 
@@ -49,4 +50,5 @@ void ReleaseImg_Result()
 	DeleteGraph(kill);
 	DeleteGraph(bonus);
 	DeleteGraph(sumpoint);
+	imgloadflag_result = 0;
 }
