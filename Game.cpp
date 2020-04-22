@@ -33,10 +33,16 @@ void GameUpdate()
 	}
 
 	if (CheckHitKey(KEY_INPUT_RIGHT) != 0) {
-		ally_x += move;
+		if (ally_x < 510) {
+			ally_x += move;
+		}
+		
 	}
 	if (CheckHitKey(KEY_INPUT_LEFT) != 0) {
-		ally_x -= move;
+		if (ally_x > 40) {
+			ally_x -= move;
+		}
+		
 	}
 
 	
